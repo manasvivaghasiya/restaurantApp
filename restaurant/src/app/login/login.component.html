@@ -1,24 +1,28 @@
+<div class="row">
+<div class="col-4">
+<div class="form-wrapper container mt-5">
+    <form class="form" [formGroup]="user">
+        <h4>please sign in your account and start the adventure</h4>
+        <div class="form-group"
+            [ngClass]="{ 'form-invalid': !user.get('firstName')?.valid && user.get('firstName')?.['touched'] }">
+            <label>user Name</label>
+            <input type="text" required formControlName="userName" class="form-control" name="userName" />
+            <span
+                *ngIf="!user.get('userName')?.valid && user.get('userName')?.touched && user.get('userName')?.errors?.['required']">
+                userName Name is required
+            </span>
+        </div>
+        <div class="form-group">
+            <label>password</label>
+            <input type="text" required formControlName="Password" class="form-control" name="Password" />
+            <span
+                *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['required']">
+                password is required
+            </span>
+        </div>
+    <button type="submit" class="btn btn-primary">sign in</button>
 
-
-<div class="row  text-align-center">
-    <div class="col-3">
-            <form class="px-4 py-3 text-align-center">
-                <h1 class="text-align-center"> Restaurant </h1>
-                <div class="form-group">
-                <label for="exampleDropdownFormUserName">user name:</label>
-                <input type="email" class="form-control" id="exampleDropdownFormUserName" placeholder="userName" autocomplete="username">
-                </div>
-                <div class="form-group">
-                <label for="exampleDropdownFormPassword1">Password:</label>
-                <input type="password" class="form-control" id="exampleDropdownFormPassword" placeholder="Password" autocomplete="current-password">
-                </div>
-                <div class="form-group">
-                <!-- <input type="checkbox" class="form-check-input" id="dropdownCheck"> -->
-                <!-- <label class="form-check-label" for="dropdownCheck"> -->
-                <a [routerLink]="['/forgot-pass']" >forget password</a>
-                <!-- </label> -->
-                </div>
-                <button type="submit" class="btn btn-primary" a [routerLink]="['/registration']" >Sign up</button> 
-            </form>
-    </div>
-  </div>
+    </form>
+</div>
+</div>
+</div>
