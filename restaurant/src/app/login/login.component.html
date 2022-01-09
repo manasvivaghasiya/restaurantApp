@@ -1,26 +1,28 @@
-<div class="row">
-<div class="col-4">
+<div class="row ">
+<div class="col-3">
 <div class="form-wrapper container mt-5">
     <form class="form" [formGroup]="user">
+        <h2>welcome to restaurant</h2>
         <h4>please sign in your account and start the adventure</h4>
         <div class="form-group"
             [ngClass]="{ 'form-invalid': !user.get('firstName')?.valid && user.get('firstName')?.['touched'] }">
-            <label>user Name</label>
-            <input type="text" required formControlName="userName" class="form-control" name="userName" />
-            <span
+            <label>user Name:</label>
+            <input type="text" required formControlName="userName" class="form-control" placeholder="enter your user name " name="userName" />
+            <span 
                 *ngIf="!user.get('userName')?.valid && user.get('userName')?.touched && user.get('userName')?.errors?.['required']">
                 userName Name is required
             </span>
         </div>
         <div class="form-group">
-            <label>password</label>
+            <label>password:</label>
+            <a>forgot password</a>
             <input type="text" required formControlName="Password" class="form-control" name="Password" />
             <span
                 *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['required']">
                 password is required
             </span>
         </div>
-    <button type="submit" class="btn btn-primary">sign in</button>
+    <button type="submit" class="btn btn-primary " a [routerLink]="['/registration']">sign in</button>
 
     </form>
 </div>

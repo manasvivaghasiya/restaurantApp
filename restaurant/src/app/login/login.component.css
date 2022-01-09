@@ -1,0 +1,20 @@
+h2{
+  color: gray;  
+}
+h4{
+    color: darkgrey;
+}
+.btn{
+    text-align: center;
+    width: 100%;
+    background-color: rgba(133, 27, 231, 0.678);
+    box-shadow: 1px 1px ;
+    border: none;
+    padding: 10px;
+    }
+
+    .btn:hover{
+        box-shadow:0px 0px 35px 1px rgba(197, 158, 231, 0.678);
+    }
+
+  
