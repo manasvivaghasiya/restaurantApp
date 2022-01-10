@@ -1,39 +1,63 @@
 <div class="row">
-    <div class="col-3 text-align-center">
-<form class="px-4 py-3">
-    <h4> REGISTRATION</h4>
-    <br>
-    
+    <div class="col-4">
+        <div class="form-wrapper container mt-5">
+        <form class="form" [formGroup]="user">
+        <h2> REGISTRATION</h2>
+        <h4>please sign in your account and start the adventure</h4>
+        <div class="form-group"
+            [ngClass]="{ 'form-invalid': !user.get('firstName')?.valid && user.get('firstName')?.['touched'] }">
+            <label>first Name:</label>
+            <input type="text" required formControlName="firstName" class="form-control" placeholder="firstName" name="firstName" />
+            <span 
+                *ngIf="!user.get('firstName')?.valid && user.get('firstName')?.touched && user.get('firstName')?.errors?.['required']">
+                firstName Name is required
+            </span>
+            <span
+            *ngIf="!user.get('firstName')?.valid && user.get('firstName')?.touched && user.get('firstName')?.errors?.['firstName']">
+            Please enter a valid firstName
+        </span>
+        </div>
         <div class="form-group">
-            <label for="name">name</label>
-            <input type="text" class="form-control" id="name" placeholder="name" autocomplete="name">
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="name">lastName</label>
-                <input type="text" class="form-control" id="name" placeholder="lastName" autocomplete="name">
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="name">userName</label>
-                    <input type="text" class="form-control" id="name" placeholder="userName" autocomplete="name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name">password</label>
-                        <input type="text" class="form-control" id="name" placeholder="password" autocomplete="password">
-                        </div>
-                        
+            <label>last name:</label>
+            <input type="text" required formControlName="lastName" class="form-control" placeholder="lasttName" name="lastName" />
+            <span
+                *ngIf="!user.get('lastName')?.valid && user.get('lastName')?.touched && user.get('lastName')?.errors?.['lastName']">
+                lastName is required
+            </span>
+            <span
+            *ngIf="!user.get('lastName')?.valid && user.get('lastName')?.touched && user.get('lastName')?.errors?.['lastName']">
+            Please enter a valid lastName
+        </span>
+        </div>
+        <div class="form-group">
+            <label>address:</label>
+            <input type="text" required formControlName="address" class="form-control" placeholder="address" name="address" />
+            <span
+                *ngIf="!user.get('address')?.valid && user.get('address')?.touched && user.get('address')?.errors?.['address']">
+                address is required
+            </span>
+            <span
+            *ngIf="!user.get('address')?.valid && user.get('address')?.touched && user.get('address')?.errors?.['address']">
+            Please enter a valid address
+        </span>
+        </div>
+        <div class="form-group">
+            <label>context no:</label>
+            <input type="number" required formControlName="number" placeholder="contectNo" class="form-control" name="number" />
+            <span
+                *ngIf="!user.get('number')?.valid && user.get('number')?.touched && user.get('number')?.errors?.['number']">
+                number is required
+            </span>
+            <span
+            *ngIf="!user.get('number')?.valid && user.get('number')?.touched && user.get('number')?.errors?.['number']">
+            Please enter a valid number
+        </span>
+        </div>
                     
-
-
-                <!-- <p>You can pass an existing component as content of the modal window. In this case, if you're still using Angular 8 or older, remember to add the content component
-                    in the <code>entryComponents</code> section of your <code>NgModule</code>. For Angular 9 or newer, it's not needed anymore.
-                    </p>
-                    
-                    <button class="btn btn-lg btn-outline-primary" (click)="open()">submit</button> -->
+                    <button class="btn btn-lg btn-primary" (click)="open()">submit</button>
     
-    <button type="submit" class="btn btn-primary">submit</button>
+    <!-- <button type="submit" class="btn btn-primary">submit</button> -->
 </form>
+</div>
 </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forgot-pass',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPassComponent implements OnInit {
 
-  constructor() { }
+  user: FormGroup
 
+  constructor(private formBuilder: FormBuilder) { 
+    this.user = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]]
+   })
+  }
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
   }
 
-}
+
+
+
