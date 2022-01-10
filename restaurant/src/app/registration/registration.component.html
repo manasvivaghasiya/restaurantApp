@@ -21,7 +21,7 @@
             <label>last name:</label>
             <input type="text" required formControlName="lastName" class="form-control" placeholder="lasttName" name="lastName" />
             <span
-                *ngIf="!user.get('lastName')?.valid && user.get('lastName')?.touched && user.get('lastName')?.errors?.['lastName']">
+                *ngIf="!user.get('lastName')?.valid && user.get('lastName')?.touched && user.get('lastName')?.errors?.['required']">
                 lastName is required
             </span>
             <span
@@ -33,7 +33,7 @@
             <label>address:</label>
             <input type="text" required formControlName="address" class="form-control" placeholder="address" name="address" />
             <span
-                *ngIf="!user.get('address')?.valid && user.get('address')?.touched && user.get('address')?.errors?.['address']">
+                *ngIf="!user.get('address')?.valid && user.get('address')?.touched && user.get('address')?.errors?.['required']">
                 address is required
             </span>
             <span
@@ -42,10 +42,10 @@
         </span>
         </div>
         <div class="form-group">
-            <label>context no:</label>
+            <label>contect no:</label>
             <input type="number" required formControlName="number" placeholder="contectNo" class="form-control" name="number" />
             <span
-                *ngIf="!user.get('number')?.valid && user.get('number')?.touched && user.get('number')?.errors?.['number']">
+                *ngIf="!user.get('number')?.valid && user.get('number')?.touched && user.get('number')?.errors?.['required']">
                 number is required
             </span>
             <span

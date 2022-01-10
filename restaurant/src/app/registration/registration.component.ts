@@ -36,7 +36,7 @@ export class RegistrationComponent {
 
   open() {
     const modalRef = this.modalService.open(WelcomeComponent);
-    modalRef.componentInstance.name = 'welcome';
+    // modalRef.componentInstance.name = 'welcome';
   }
 }
 // function NgbdModalContent(NgbdModalContent: any) {
