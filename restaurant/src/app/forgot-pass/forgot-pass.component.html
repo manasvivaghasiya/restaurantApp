@@ -1,29 +1,31 @@
-<div class="row ">
-    <div class="col-8">
-        <div class="container ">
-              <img src="../../assets/forgot.svg" alt="">
+<div class="form-wrapper  container mt-5 ">
+    <div class="row ">
+        <div class="col-lg-8 col-sm-2">
+
+            <img src="../../assets/forgot.svg" alt="">
+
         </div>
-    </div>
-    <div class="col-4">
-    <div class="form-wrapper container mt-5">
-        <form class="form" [formGroup]="user">
-           <h3>forgot password</h3>
-            <h6>Enter your email and we'll send you instruction to reset your password</h6>
-            <div class="form-group"
-            [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.touched }">
-            <label>Email</label>
-            <input type="text" required formControlName="email" class="form-control" placeHolder="email" name="email" />
-            <span
-                *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']">
-                Email is required
-            </span>
-            <span
-                *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['email']">
-                Please enter a valid email
-            </span>
-        </div>
-        <br>
-            <!-- <div class="form-group">
+        <div class="col-lg-4 col-sm-10">
+            <!-- <div class="form-wrapper container mt-5"> -->
+            <form class="form" [formGroup]="user">
+                <h3>forgot password</h3>
+                <h6>Enter your email and we'll send you instruction to reset your password</h6>
+                <div class="form-group"
+                    [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.touched }">
+                    <label>Email</label>
+                    <input type="text" required formControlName="email" class="form-control" placeHolder="email"
+                        name="email" />
+                    <span
+                        *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']">
+                        Email is required
+                    </span>
+                    <span
+                        *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['email']">
+                        Please enter a valid email
+                    </span>
+                </div>
+                <br>
+                <!-- <div class="form-group">
                 <label for="exampleDropdownFormPassword">Password</label>
                 <input type="password" class="form-control" required formControlName="Password"
                     id="exampleDropdownFormPassword" placeholder="Password" autocomplete="current-password">
@@ -33,11 +35,11 @@
                 <input type="password" class="form-control" id="exampleDropdownFormPassword" placeholder="Password"
                     autocomplete="current-password">
             </div> -->
-            <button type="submit" class="btn btn-primary" >send reset link</button>
-            <br>
-            <br>
-            <a a [routerLink]="['/login'] " href=""> back to login</a>
-        </form>
+                <button type="submit" class="btn btn-primary">send reset link</button>
+                <br>
+                <br>
+                <a a [routerLink]="['/login'] " href="" class="text-center"> back to login</a>
+            </form>
+            <!-- </div> -->
+        </div>
     </div>
-</div>
-

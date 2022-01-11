@@ -1,51 +1,51 @@
 <div class="form-wrapper container mt-5">
-<div class="row ">
-    <div class="col-lg-8 col-sm-2">
-        <!-- <div class="container"> -->
+    <div class="row ">
+        <div class="col-lg-8 col-sm-2">
+            <!-- <div class="container"> -->
             <div class="">
-              <img src="../../assets/login.svg" alt="">
+                <img src="../../assets/login.svg" alt="">
             </div>
-        <!-- </div> -->
+            <!-- </div> -->
+        </div>
+        <div class="col-lg-4 col-sm-10">
+            <form class="form" [formGroup]="user">
+                <h2>welcome to restaurant</h2>
+                <h4>please sign in your account and start the adventure</h4>
+                <div class="form-group"
+                    [ngClass]="{ 'form-invalid': !user.get('userName')?.valid && user.get('userName')?.['touched'] }">
+                    <label>User Name:</label>
+                    <input type="text" required formControlName="userName" class="form-control" placeholder="UserName "
+                        name="userName" />
+                    <span
+                        *ngIf="!user.get('userName')?.valid && user.get('userName')?.touched && user.get('userName')?.errors?.['required']">
+                        userName Name is required
+                    </span>
+                    <span
+                        *ngIf="!user.get('userName')?.valid && user.get('userName')?.touched && user.get('userName')?.errors?.['userName']">
+                        Please enter a valid userName
+                    </span>
+                </div>
+                <div class="form-group">
+                    <div class="display-flex justify-content-space-between">
+                        <label>password:</label>
+                        <a [routerLink]="['/forgot-pass']" href="">forgot password?</a>
+                    </div>
+                    <input type="text" required formControlName="Password" class="form-control" name="Password" />
+                    <span
+                        *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['required']">
+                        password is required
+                    </span>
+                    <span
+                        *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['Password']">
+                        Please enter a valid Password
+                    </span>
+                </div>
+                <button type="submit" class="btn btn-primary ">sign in</button>
+                <!-- [disabled]="!user.valid" -->
+                <br>
+                <br>
+                <h6>New on our platform?<a [routerLink]="['/registration']" href="">create new account</a></h6>
+            </form>
+        </div>
     </div>
-<div class="col-lg-4 col-sm-10">
-    <form class="form" [formGroup]="user">
-        <h2>welcome to restaurant</h2>
-        <h4>please sign in your account and start the adventure</h4>
-        <div class="form-group"
-            [ngClass]="{ 'form-invalid': !user.get('userName')?.valid && user.get('userName')?.['touched'] }">
-            <label>User Name:</label>
-            <input type="text" required formControlName="userName" class="form-control" placeholder="UserName " name="userName" />
-            <span 
-                *ngIf="!user.get('userName')?.valid && user.get('userName')?.touched && user.get('userName')?.errors?.['required']">
-                userName Name is required
-            </span>
-            <span
-            *ngIf="!user.get('userName')?.valid && user.get('userName')?.touched && user.get('userName')?.errors?.['userName']">
-            Please enter a valid userName
-        </span>
-        </div>
-        <div class="form-group">
-            <div class="display-flex justify-justify-space-between">
-            <label>password:</label>
-            <a [routerLink]="['/forgot-pass']"href="">forgot password?</a>
-            </div>
-            <input type="text" required formControlName="Password" class="form-control" name="Password" />
-            <span
-                *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['required']">
-                password is required
-            </span>
-            <span
-            *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['Password']">
-            Please enter a valid Password
-        </span>
-        </div>
-               <button type="submit" class="btn btn-primary "  
-               a [routerLink]="['/registration']" >sign in</button>
-               <!-- [disabled]="!user.valid" -->
-    <br>
-    <br>
-     <h6>New on our platform?<a [routerLink]="['/registration']" href="">create new account</a></h6>
-     </form>
-</div>
-</div>
 </div>
