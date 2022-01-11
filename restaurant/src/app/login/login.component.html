@@ -3,7 +3,7 @@
         <div class="col-lg-8 col-sm-2">
             <!-- <div class="container"> -->
             <div class="">
-                <img src="../../assets/login.svg" alt="">
+                <img src="../../assets/login.svg" class="container-fluid" alt="">
             </div>
             <!-- </div> -->
         </div>
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <div class="display-flex justify-content-space-between">
                         <label>password:</label>
-                        <a [routerLink]="['/forgot-pass']" href="">forgot password?</a>
+                        <a class="p-5" [routerLink]="['/forgot-pass']" href="">forgot password?</a>
                     </div>
                     <input type="text" required formControlName="Password" class="form-control" name="Password" />
                     <span
@@ -40,11 +40,19 @@
                         Please enter a valid Password
                     </span>
                 </div>
-                <button type="submit" class="btn btn-primary ">sign in</button>
+                <button type="submit" class="btn btn-primary " [disabled]="!user.valid">sign in</button>
                 <!-- [disabled]="!user.valid" -->
                 <br>
                 <br>
                 <h6>New on our platform?<a [routerLink]="['/registration']" href="">create new account</a></h6>
+                <div >
+                    <i class="fa fa-facebook p-2 m-2 icon" style="background-color: slateblue; color: white;" aria-hidden="true"></i>
+                    <i class="fa fa-twitter p-2 m-2 icon" style="background-color: rgb(36, 193, 255); color: white;"
+                        aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o p-2 m-2 icon" style="background-color:rgb(207, 57, 57); color:white"
+                        aria-hidden="true"></i>
+                        <i class="fa fa-github p-2 m-2 icon" style="background-color: black; color: white;" aria-hidden="true"></i>
+                </div>
             </form>
         </div>
     </div>
