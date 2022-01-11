@@ -27,10 +27,10 @@ export class RegistrationComponent {
 
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder) {
     this.user = this.formBuilder.group({
-      fristName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      contectNo: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      fullName: ['', [Validators.required]],
+      mobileNumber: ['', [Validators.required]],
+      Password: ['', [Validators.required]],
     })
   }
 

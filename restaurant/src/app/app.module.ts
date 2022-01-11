@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -10,6 +9,10 @@ import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AccountService } from './services/account.service';
+// import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     RegistrationComponent,
     ForgotPassComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +29,15 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule,
+    HttpClientModule,
+    // AuthModule
+
   ],
-  providers: [],
+  providers: [
+    AccountService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
