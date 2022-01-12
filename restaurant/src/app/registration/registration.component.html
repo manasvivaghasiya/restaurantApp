@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-4">
         <div class="form-wrapper container mt-5">
-        <form class="form" [formGroup]="user">
+        <form class="form" [formGroup]="user" (ngSubmit)="onSubmit()">
         <h2> REGISTRATION</h2>
         <h4>please sign in your account and start the adventure</h4>
         <div class="form-group"
@@ -45,7 +45,7 @@
         </div> -->
         <div class="form-group">
             <label>mobileNumber:</label>
-            <input type="number" required formControlName="mobileNumber" placeholder="mobileNumber" class="form-control" name="mobileNumber" />
+            <input type="text" required formControlName="mobileNumber" placeholder="mobileNumber" class="form-control" name="mobileNumber" />
             <span
                 *ngIf="!user.get('mobileNumber')?.valid && user.get('mobileNumber')?.touched && user.get('mobileNumber')?.errors?.['required']">
                 number is required
@@ -68,7 +68,8 @@
         </span>
         </div>
                     
-                    <button class="btn btn-lg btn-primary" (click)="open()">submit</button>
+                    <button type="submit" class="btn btn-lg btn-primary"  [disabled]="!user.valid" >submit</button>  
+                    <!-- (click)="open()" -->
     
     <!-- <button type="submit" class="btn btn-primary">submit</button> -->
 </form>

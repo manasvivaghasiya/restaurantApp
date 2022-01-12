@@ -7,7 +7,7 @@
         </div>
         <div class="col-lg-4 col-sm-10">
             <!-- <div class="form-wrapper container mt-5"> -->
-            <form class="form" [formGroup]="user">
+            <form class="form" [formGroup]="user" (ngSubmit)="onSubmit()">
                 <h3>forgot password</h3>
                 <h6>Enter your email and we'll send you instruction to reset your password</h6>
                 <div class="form-group"

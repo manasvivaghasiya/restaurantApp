@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-forgot-pass',
@@ -8,28 +12,51 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ForgotPassComponent implements OnInit {
 
-  user: FormGroup
+  user!: FormGroup
   returnUrl: any;
-  route: any;
-  accountService: any;
+ // accountService: any;
   ToastrService: any;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder,
+    private modalService:NgbModal,
+     private accountService: AccountService,
+    private router:Router,
+    private route: ActivatedRoute,
+    private toasterService: ToastrService
+  )         {}
+
+  ngOnInit(): void {
     this.user = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]]
-   })
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
 
-    this.returnUrl = 
-    this.route.snapshot.queryParams['returnUrl'];
+    this.returnUrl =
+      this.route.snapshot.queryParams['returnUrl'];
+
   }
-  
 
-  get f(){
+  get f() {
     return this.user.controls;
   }
+  
+  //    { 
+  //   this.user = this.formBuilder.group({
+  //     email: ['', [Validators.required, Validators.email]]
+  //  })
+
+  //   this.returnUrl = 
+  //   this.route.snapshot.queryParams['returnUrl'];
+  // }
+  
+
+  // get f(){
+  //   return this.user.controls;
+  // }
 
   onSubmit(){
-    this.accountService.ForgotPassComponent(this.f['email'].value).
+    debugger
+    this.accountService.forgotPass(this.f['email'].value).
     subscribe(
       (data: any) =>{
         if (data.isSuccess){
@@ -38,7 +65,7 @@ export class ForgotPassComponent implements OnInit {
             token: data.token
           }));
           this.ToastrService.sucess(data.message)
-          this.route.navigate([this.returnUrl]);
+          this.router.navigate([this.returnUrl]);
       }else{
         this.ToastrService.error(data.message)
       }
@@ -46,9 +73,7 @@ export class ForgotPassComponent implements OnInit {
     );
     }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  
   }
 
 

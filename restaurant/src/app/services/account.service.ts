@@ -6,6 +6,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AccountService {
+  // ForgotPassComponent(value: any) {
+  //   throw new Error('Method not implemented.');
+  // }
 
   constructor(private httpClient: HttpClient) { }
   // isLoggedIn(){
@@ -18,12 +21,13 @@ export class AccountService {
    })
  }
 
-registration(email:string,fullName:string, mobileNumber:number,password:any){
+registration(email:string,fullName:string, mobileNumber:any,password:number,roleId:any){
     return this.httpClient.post(`${environment.apiEndPoint}/CreateUser`,{
       email:email,
       fullName: fullName,
       mobileNumber: mobileNumber,
-      password: password
+      password: password,
+      roleId: roleId
     })
 }
 
