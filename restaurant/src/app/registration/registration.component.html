@@ -23,11 +23,11 @@
             <input type="text" required formControlName="fullName" class="form-control" placeholder="fullName" name="fullName" />
             <span 
                 *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['required']">
-                firstName Name is required
+                fullName Name is required
             </span>
             <span
-            *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['firstName']">
-            Please enter a valid firstName
+            *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['fullName']">
+            Please enter a valid fullName
         </span>
         </div>
        

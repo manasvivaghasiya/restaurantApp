@@ -13,16 +13,16 @@ export class DashboardComponent implements OnInit {
   constructor(private Router: Router, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.getQuestions()
+    // this.getQuestions()
   }
-   logout(){
-     localStorage.clear();
-    //  this.Router.navigate(['login']);
-   }
-   getQuestions() {
-     this.httpClient.get(`${environment.apiEndPoint}/questions/get`).subscribe((res: any)=>{
-       console.log(res.data)
-     })
-   }
+  //  logout(){
+  //    localStorage.clear();
+  //   //  this.Router.navigate(['login']);
+  //  }
+  //  getQuestions() {
+  //    this.httpClient.get(`${environment.apiEndPoint}/questions/get`).subscribe((res: any)=>{
+  //      console.log(res.data)
+  //    })
+  //  }
 
 }

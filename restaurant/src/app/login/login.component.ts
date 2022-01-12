@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private toastrService: ToastrService) {
-    if (this.accountService.isLoggedIn()) {
-      this.router.navigate(['/app/dashboard']);
-    }
+    // if (this.accountService.isLoggedIn()) {
+    //   this.router.navigate(['/app/dashboard']);
+    // }
   }
 
   ngOnInit(): void {
@@ -40,17 +40,13 @@ export class LoginComponent implements OnInit {
   get f() {
     return this.user.controls;
   }
+  
 
   onSubmit() {
-    // this.submitted = true;
-
-    // if(this.user.invalid){
-    //   return;
-    // }
-
-    // this.loading = true;
-    console.log(this.f);
-    this.accountService.login(this.f.email.value, this.f.password.value).
+    
+    debugger
+    // console.log(this.f);
+    this.accountService.login(this.f['email'].value, this.f['password'].value).
       subscribe(
         (data: any) => {
           if (data.isSuccess) {

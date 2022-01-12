@@ -8,7 +8,7 @@
             <!-- </div> -->
         </div>
         <div class="col-lg-4 col-sm-10">
-            <form class="form" [formGroup]="user">
+            <form class="form" [formGroup]="user" (ngSubmit)="onSubmit()">
                 <h2>welcome to restaurant</h2>
                 <h4>please sign in your account and start the adventure</h4>
                 <div class="form-group"
@@ -28,16 +28,16 @@
                 <div class="form-group">
                     <div class="display-flex justify-content-space-between">
                         <label>password:</label>
-                        <a class="p-5" [routerLink]="['/forgot-pass']" href="">forgot password?</a>
+                        <a class="p-5" [routerLink]="['/forgot-pass']">forgot password?</a>
                     </div>
-                    <input type="text" required formControlName="Password" class="form-control" name="Password" />
+                    <input type="text" required formControlName="password" class="form-control" name="password" />
                     <span
-                        *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['required']">
+                        *ngIf="!user.get('password')?.valid && user.get('password')?.touched && user.get('password')?.errors?.['required']">
                         password is required
                     </span>
                     <span
-                        *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['Password']">
-                        Please enter a valid Password
+                        *ngIf="!user.get('password')?.valid && user.get('password')?.touched && user.get('password')?.errors?.['password']">
+                        Please enter a valid password
                     </span>
                 </div>
                 <button type="submit" class="btn btn-primary " [disabled]="!user.valid">sign in</button>

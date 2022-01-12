@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false, 
-  apiEndPoint:'http://iris-api.mycodelibraries.com/api/User'
+  apiEndPoint:'https://iris-api.mycodelibraries.com/api/User'
 };
 
 /*
