@@ -9,10 +9,15 @@ import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+// import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountService } from './services/account.service';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { AuthModule } from './auth/auth.module';
+import { AuthHelpers } from './auth/auth.helper';
+
 
 @NgModule({
   declarations: [
@@ -26,17 +31,20 @@ import { AccountService } from './services/account.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastrModule.forRoot()
     // AuthModule
 
   ],
   providers: [
-    AccountService
+    { provide: HTTP_INTERCEPTORS, useClass: AuthHelpers , multi: true }
+
   ],
   bootstrap: [AppComponent]
 })

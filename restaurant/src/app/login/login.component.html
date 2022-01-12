@@ -12,16 +12,16 @@
                 <h2>welcome to restaurant</h2>
                 <h4>please sign in your account and start the adventure</h4>
                 <div class="form-group"
-                    [ngClass]="{ 'form-invalid': !user.get('userName')?.valid && user.get('userName')?.['touched'] }">
-                    <label>User Name:</label>
-                    <input type="text" required formControlName="userName" class="form-control" placeholder="UserName "
-                        name="userName" />
+                    [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.['touched'] }">
+                    <label>Email:</label>
+                    <input type="text" required formControlName="email" class="form-control" placeholder="email "
+                        name="email" />
                     <span
-                        *ngIf="!user.get('userName')?.valid && user.get('userName')?.touched && user.get('userName')?.errors?.['required']">
+                        *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']">
                         userName Name is required
                     </span>
                     <span
-                        *ngIf="!user.get('userName')?.valid && user.get('userName')?.touched && user.get('userName')?.errors?.['userName']">
+                        *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['userName']">
                         Please enter a valid userName
                     </span>
                 </div>
@@ -45,13 +45,15 @@
                 <br>
                 <br>
                 <h6>New on our platform?<a [routerLink]="['/registration']" href="">create new account</a></h6>
-                <div >
-                    <i class="fa fa-facebook p-2 m-2 icon" style="background-color: slateblue; color: white;" aria-hidden="true"></i>
+                <div>
+                    <i class="fa fa-facebook p-2 m-2 icon" style="background-color: slateblue; color: white;"
+                        aria-hidden="true"></i>
                     <i class="fa fa-twitter p-2 m-2 icon" style="background-color: rgb(36, 193, 255); color: white;"
                         aria-hidden="true"></i>
                     <i class="fa fa-envelope-o p-2 m-2 icon" style="background-color:rgb(207, 57, 57); color:white"
                         aria-hidden="true"></i>
-                        <i class="fa fa-github p-2 m-2 icon" style="background-color: black; color: white;" aria-hidden="true"></i>
+                    <i class="fa fa-github p-2 m-2 icon" style="background-color: black; color: white;"
+                        aria-hidden="true"></i>
                 </div>
             </form>
         </div>
