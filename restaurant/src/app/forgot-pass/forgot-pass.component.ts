@@ -14,16 +14,16 @@ export class ForgotPassComponent implements OnInit {
 
   user!: FormGroup
   returnUrl: any;
- // accountService: any;
-  ToastrService: any;
+  // accountService: any;
+  // ToastrService: any;
 
   constructor(private formBuilder: FormBuilder,
-    private modalService:NgbModal,
-     private accountService: AccountService,
-    private router:Router,
+    private modalService: NgbModal,
+    private accountService: AccountService,
+    private router: Router,
     private route: ActivatedRoute,
     private toasterService: ToastrService
-  )         {}
+  ) { }
 
   ngOnInit(): void {
     this.user = this.formBuilder.group({
@@ -39,7 +39,7 @@ export class ForgotPassComponent implements OnInit {
   get f() {
     return this.user.controls;
   }
-  
+
   //    { 
   //   this.user = this.formBuilder.group({
   //     email: ['', [Validators.required, Validators.email]]
@@ -48,33 +48,33 @@ export class ForgotPassComponent implements OnInit {
   //   this.returnUrl = 
   //   this.route.snapshot.queryParams['returnUrl'];
   // }
-  
+
 
   // get f(){
   //   return this.user.controls;
   // }
 
-  onSubmit(){
+  onSubmit() {
     debugger
     this.accountService.forgotPass(this.f['email'].value).
-    subscribe(
-      (data: any) =>{
-        if (data.isSuccess){
-          localStorage.setItem('userInfo' , JSON.stringify({
-            userInfo: data.userInfo,
-            token: data.token
-          }));
-          this.ToastrService.sucess(data.message)
-          this.router.navigate([this.returnUrl]);
-      }else{
-        this.ToastrService.error(data.message)
-      }
-    },
-    );
-    }
-
-  
+      subscribe(
+        (data: any) => {
+          if (data.isSuccess) {
+            localStorage.setItem('userInfo', JSON.stringify({
+              userInfo: data.userInfo,
+              token: data.token
+            }));
+            this.toasterService.success(data.message)
+            this.router.navigate([this.returnUrl]);
+          } else {
+            this.toasterService.error(data.message)
+          }
+        },
+      );
   }
+
+
+}
 
 
 

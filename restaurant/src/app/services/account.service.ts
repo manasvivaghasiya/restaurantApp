@@ -32,9 +32,7 @@ registration(email:string,fullName:string, mobileNumber:any,password:number,role
 }
 
 forgotPass(email:string){
-  return this.httpClient.post(`${environment.apiEndPoint}/SendResetPasswordRequest`,{
-    email:email
-  })
+  return this.httpClient.post(`${environment.apiEndPoint}/SendResetPasswordRequest?email=${email}`,null)
 }
 
 }
