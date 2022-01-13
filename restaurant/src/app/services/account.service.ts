@@ -6,14 +6,20 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AccountService {
+  // logout() {
+  //   throw new Error('Method not implemented.');
+  // }
+  // isLoggedIn() {
+  //   throw new Error('Method not implemented.');
+  // }
   // ForgotPassComponent(value: any) {
   //   throw new Error('Method not implemented.');
   // }
 
   constructor(private httpClient: HttpClient) { }
-  // isLoggedIn(){
-  //   return localStorage.getItem('userInfo');
-  // }
+  isLoggedIn(){
+    return localStorage.getItem('userInfo');
+  }
  login(email:string, password:string){
    return this.httpClient.post(`${environment.apiEndPoint}/LoginAuthenticate`,{
      email:email,
