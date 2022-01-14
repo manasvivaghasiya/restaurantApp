@@ -41,7 +41,7 @@ export class RegistrationComponent {
       email: ['', [Validators.required]],
       fullName: ['', [Validators.required]],
       mobileNumber: ['', [Validators.required]],
-      Password: ['', [Validators.required]],
+      Password: ['', [Validators.required,Validators.minLength(6)]],
     })
 
   }

@@ -1,8 +1,10 @@
 h3{
-    color:gray;
+    color:black;  ;
+    font-family: 'Cormorant Garamond', serif;
 }
 h5{
     color: darkgray;
+    font-family: 'Cormorant Garamond', serif;
 }
 .btn{
     width: 100%;
@@ -12,3 +14,16 @@ h5{
 .btn:hover{
     box-shadow:0px 0px 35px 1px rgba(197, 158, 231, 0.678);
 }
+label{
+    font-family: 'Cormorant Garamond', serif;
+    
+}
+input{
+    font-family: 'Cormorant Garamond', serif;
+
+}
+.icon{
+    border-radius: 4px 4px;
+    text-align: center;
+}
+

@@ -1,8 +1,12 @@
 h2{
-  color: gray;  
+  color: rgb(87, 82, 82);  ;  
+  font-family: 'Cormorant Garamond', serif;
+
 }
 h4{
     color: darkgrey;
+    font-family: 'Cormorant Garamond', serif;
+
 }
 .btn{
     text-align: center;
@@ -14,13 +18,23 @@ h4{
     }
     a{
         text-align: end;
-    }
+    font-family: 'Cormorant Garamond', serif;
 
+    }
+label{
+    font-family: 'Cormorant Garamond', serif;
+
+}
+input{
+    font-family: 'Cormorant Garamond', serif;
+
+}
     .btn:hover{
         box-shadow:0px 0px 35px 1px #7367f0;
     }
     .icon{
         border-radius: 4px 4px;
+        text-align: center;
     }
 
   

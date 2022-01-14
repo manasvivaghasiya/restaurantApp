@@ -8,7 +8,7 @@
         <div class="col-lg-4 col-sm-10">
             <!-- <div class="form-wrapper container mt-5"> -->
             <form class="form" [formGroup]="user" (ngSubmit)="onSubmit()">
-                <h3>forgot password</h3>
+                <h3>forgot password<i class="fa fa-lock" aria-hidden="true"></i></h3>
                 <h6>Enter your email and we'll send you instruction to reset your password</h6>
                 <div class="form-group"
                     [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.touched }">
@@ -38,7 +38,7 @@
                 <button type="submit" class="btn btn-primary">send reset link</button>
                 <br>
                 <br>
-                <a a [routerLink]="['/login'] " class="text-center"> back to login</a>
+                <a a [routerLink]="['/login'] " style="text-align: center;"> back to login</a>
             </form>
             <!-- </div> -->
         </div>
