@@ -1,30 +1,50 @@
 .btn{
     width: 100%;
-    background-color:blueviolet;
+    background-color: #7367f0;
+
     border: none;
 }
 h3{
-    color: rgb(87, 82, 82);  
-    font-family: 'Cormorant Garamond', serif;
+    color: rgb(39, 37, 37);
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+    
 
   }
-  h6{
-      color: darkgrey;
-    font-family: 'Cormorant Garamond', serif;
+  p{
+      color: rgb(105, 102, 102);
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+
 }
 label{
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+
 
 }
 input{
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+
 
 }
   a{
       color:blueviolet;
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+
 
   }
   .btn:hover{
     box-shadow:0px 0px 35px 1px rgba(197, 158, 231, 0.678);
+}
+img{
+  width:95%;
+  /* background:rgb(250, 245, 245); */
+  
+}
+
+#for{
+  display: block;
 }

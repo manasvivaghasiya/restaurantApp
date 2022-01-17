@@ -1,25 +1,34 @@
-h3{
-    color:black;  ;
-    font-family: 'Cormorant Garamond', serif;
+h4{
+    color:rgb(134, 126, 126) ;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+
 }
 h5{
-    color: darkgray;
-    font-family: 'Cormorant Garamond', serif;
+    color: rgb(158, 149, 149);
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+
 }
 .btn{
     width: 100%;
-    background-color:blueviolet;
+    background-color: #7367f0;
+
     border: none;
 }
 .btn:hover{
     box-shadow:0px 0px 35px 1px rgba(197, 158, 231, 0.678);
 }
 label{
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+
     
 }
 input{
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+
 
 }
 .icon{
@@ -27,3 +36,6 @@ input{
     text-align: center;
 }
 
+/* img{
+    width:65%;
+} */

@@ -1,11 +1,13 @@
 h2{
-  color: rgb(87, 82, 82);  ;  
-  font-family: 'Cormorant Garamond', serif;
+  color: rgb(39, 37, 37);  ;  
+  /* font-family: 'Cormorant Garamond', serif; */
+  font-family: 'Titillium Web', sans-serif;
 
 }
 h4{
-    color: darkgrey;
+    color: rgb(117, 111, 111);
     font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Titillium Web', sans-serif; */
 
 }
 .btn{
@@ -18,15 +20,19 @@ h4{
     }
     a{
         text-align: end;
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
+    
 
     }
 label{
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
 
 }
 input{
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Titillium Web', sans-serif;
 
 }
     .btn:hover{
@@ -36,5 +42,23 @@ input{
         border-radius: 4px 4px;
         text-align: center;
     }
+    .info{
+        color: #aeaaec;
+        background-color: #e5e2fa;
+        border-radius: 4px 4px;
+    }
+
+   .divider .divider-text:before  {
+       border-top: 1px solid #ebe9f1;
+       right: 100%;
+       content:"";
+       position: absolute;
+       top: 50%;
+       width:9999;
+       
+   }
+   img{
+    width:100%;
+}
 
   
