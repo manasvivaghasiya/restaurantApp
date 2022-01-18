@@ -1,23 +1,25 @@
 body{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    font-weight: 400;
 }
 *,*::after,*::before{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
+.h-100{
+    height: 100%!important
+}
 h2{
-  color: rgb(39, 37, 37);  ;  
-  /* font-family: 'Cormorant Garamond', serif; */
-  font-family: 'Titillium Web', sans-serif;
-
-}
-h4{
-    color: rgb(117, 111, 111);
-    font-family: 'Cormorant Garamond', serif;
-    /* font-family: 'Titillium Web', sans-serif; */
+  color: rgb(122, 121, 121); 
+  font-family: 'Dongle', sans-serif;
+  /* font-size: 35px; */
+  }
+h5{
+    color: rgb(131, 126, 126);
+  font-family: 'Dongle', sans-serif;
+  /* font-size:30px; */
 
 }
 .btn{
@@ -26,23 +28,29 @@ h4{
     background-color: #7367f0;
     box-shadow: 1px 1px ;
     border: none;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 7px 0px;
     }
-    a{
-        text-align: end;
-    /* font-family: 'Cormorant Garamond', serif; */
-    font-family: 'Titillium Web', sans-serif;
-    
 
-    }
+    a{
+  font-family: 'Dongle', sans-serif;
+  color: #7367f0;
+  text-decoration: none;
+  /* font-size:30px; */
+
+}
 label{
-    /* font-family: 'Cormorant Garamond', serif; */
-    font-family: 'Titillium Web', sans-serif;
+  font-family: 'Dongle', sans-serif;
+  color: rgb(131, 126, 126);
+  /* font-size:30px; */
+
+
 
 }
 input{
-    /* font-family: 'Cormorant Garamond', serif; */
-    font-family: 'Titillium Web', sans-serif;
+  font-family: 'Dongle', sans-serif;
+  /* font-size:30px; */
+
 
 }
     .btn:hover{
@@ -58,7 +66,12 @@ input{
         border-radius: 4px 4px;
     }
     .divider{
+        text-align: center;
+
+    }
+    .divider .divider-text{
         position: relative;
+        display: inline-block;
     }
     .divider-text:before  {
 
@@ -69,8 +82,24 @@ input{
        width:100px;
        
    }
+   .px-5{
+       padding-left: 4rem;
+   }
    img{
-    width:100%;
+    width:70%;
+    border-style: none;
+    height: auto;
 }
+/* .font{
+    font-size: small;
+    font-weight: 400;
+} */
 
-  
+.align-item-center{
+    display: flex !important;
+    align-items: center;
+    padding: 10px;
+}
+.w-100{
+    width: 100%!important;
+}

@@ -17,7 +17,7 @@ import {
     constructor(private router: Router, private accountService: AccountService) {}
   
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        debugger
+        // debugger
       const user = this.accountService.isLoggedIn();
       if (user) {
         // authorised so return true
@@ -29,6 +29,5 @@ import {
         queryParams: { returnUrl: state.url },
       });
       return false;
-      
-    }
+      }
 }

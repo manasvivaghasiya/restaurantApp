@@ -40,20 +40,6 @@ export class ForgotPassComponent implements OnInit {
     return this.user.controls;
   }
 
-  //    { 
-  //   this.user = this.formBuilder.group({
-  //     email: ['', [Validators.required, Validators.email]]
-  //  })
-
-  //   this.returnUrl = 
-  //   this.route.snapshot.queryParams['returnUrl'];
-  // }
-
-
-  // get f(){
-  //   return this.user.controls;
-  // }
-
   onSubmit() {
     debugger
     this.accountService.forgotPass(this.f['email'].value).

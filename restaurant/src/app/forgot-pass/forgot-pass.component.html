@@ -12,18 +12,20 @@
             <div class="px-xl-2 mx-auto col-lg-12 col-sm-8 col-md-6">
             <form class="form" [formGroup]="user" (ngSubmit)="onSubmit()">
                 <h3>forgot password<i class="fa fa-lock" aria-hidden="true"></i></h3>
+                <br>
                 <p>Enter your email and we'll send you instruction to reset your password</p>
+                <br>
                 <div class="form-group"
                     [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.touched }">
                     <label>Email</label>
-                    <input type="text" required formControlName="email" class="form-control" placeHolder="john@gmail.com"
+                    <input type="text" required formControlName="email" class="form-control pl-2" placeHolder="john@gmail.com"
                         name="email" />
                     <span
-                        *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']">
+                        *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']"class="text-danger">
                         Email is required
                     </span>
                     <span
-                        *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['email']">
+                        *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['email']"class="text-danger">
                         Please enter a valid email
                     </span>
                 </div>
@@ -41,7 +43,9 @@
                 <button type="submit" class="btn btn-primary">send reset link</button>
                 <br>
                 <br>
-                <a a [routerLink]="['/login'] " style="text-align: center;" class="m-5"> back to login</a>
+                <div class="for-login">
+                <a a [routerLink]="['/login'] " class="m-5"> back to login</a>
+                </div>
             </form>
             </div>
         </div>
