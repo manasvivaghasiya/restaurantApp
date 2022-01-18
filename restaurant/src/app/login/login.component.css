@@ -1,3 +1,13 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+}
+
 h2{
   color: rgb(39, 37, 37);  ;  
   /* font-family: 'Cormorant Garamond', serif; */
@@ -47,14 +57,16 @@ input{
         background-color: #e5e2fa;
         border-radius: 4px 4px;
     }
+    .divider{
+        position: relative;
+    }
+    .divider-text:before  {
 
-   .divider .divider-text:before  {
-       border-top: 1px solid #ebe9f1;
        right: 100%;
        content:"";
        position: absolute;
        top: 50%;
-       width:9999;
+       width:100px;
        
    }
    img{
