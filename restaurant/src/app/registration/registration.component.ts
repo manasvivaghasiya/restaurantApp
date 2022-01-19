@@ -40,8 +40,8 @@ export class RegistrationComponent {
     this.user = this.formBuilder.group({
       email: ['', [Validators.required]],
       fullName: ['', [Validators.required]],
-      mobileNumber: ['', [Validators.required]],
-      Password: ['', [Validators.required,Validators.minLength(6)]],
+      mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      Password: ['', [Validators.required, Validators.minLength(6)]],
     })
 
   }
@@ -53,7 +53,7 @@ export class RegistrationComponent {
   onSubmit() {
     debugger
     const roleId = 2
-    this.accountService.registration(this.f['email'].value, this.f['fullName'].value, this.f['mobileNumber'].value, this.f['Password'].value,roleId).
+    this.accountService.registration(this.f['email'].value, this.f['fullName'].value, this.f['mobileNumber'].value, this.f['Password'].value, roleId).
       subscribe(
         (data: any) => {
           if (data.isSucess) {
