@@ -1,4 +1,5 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* body{
   padding: 0;
   margin: 0;
   font-weight: 400;
@@ -11,20 +12,38 @@ body{
 }
 .h-100{
   height: 100%!important
+} */
+.logo{
+  align-items: start;
+  flex-wrap: nowrap;
 }
+h3{
+  color:#5e50ee;
+  /* font-weight: 600; */
+  /* margin: 1.5pc 0 0 20px; */
+  font-family: 'Montserrat', sans-serif;
 
+}
+.form-forgot{
+  display: flex !important;
+  align-items: center;
+  padding: 10px;
+
+}
 .btn{
     width: 100%;
     background-color: #7367f0;
     padding: 5px 0px;
     border: none;
 }
-h3{
+h4{
     color: rgb(90, 86, 86);
     /* font-family: 'Cormorant Garamond', serif; */
     /* font-family: 'Titillium Web', sans-serif; */
-  font-family: 'Dongle', sans-serif;
-  /* font-size: 40px; */
+  /* font-family: 'Dongle', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+
+  /* font-size: 20px; */
 
     
 
@@ -33,8 +52,10 @@ h3{
       color: rgb(170, 157, 157);
     /* font-family: 'Cormorant Garamond', serif; */
     /* font-family: 'Titillium Web', sans-serif; */
-  font-family: 'Dongle', sans-serif;
-  /* font-size:30px; */
+  /* font-family: 'Dongle', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+
+  font-size:15px;
 
 
 
@@ -42,7 +63,11 @@ h3{
 label{
     /* font-family: 'Cormorant Garamond', serif; */
     /* font-family: 'Titillium Web', sans-serif; */
-  font-family: 'Dongle', sans-serif;
+  /* font-family: 'Dongle', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(170, 157, 157);
+
+
   /* font-size:30px; */
 
 
@@ -51,7 +76,11 @@ label{
 input{
     /* font-family: 'Cormorant Garamond', serif; */
     /* font-family: 'Titillium Web', sans-serif; */
-  font-family: 'Dongle', sans-serif;
+  /* font-family: 'Dongle', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(170, 157, 157);
+  font-size: 15px;
+ 
   /* font-size:30px; */
 
 
@@ -61,38 +90,40 @@ input{
       color:blueviolet;
     /* font-family: 'Cormorant Garamond', serif; */
     /* font-family: 'Titillium Web', sans-serif; */
-  font-family: 'Dongle', sans-serif;
+  /* font-family: 'Dongle', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+
   /* font-size:30px; */
 
 }
 .btn{
   border-radius: 5px;
-
+  padding: 6px;
+  font-size: 20px;
 }
   .btn:hover{
     box-shadow:0px 0px 35px 1px rgba(197, 158, 231, 0.678);
 }
-img{
+/* img{
   width:60%;
   border-style: none;
   height: auto;
-  /* background:rgb(250, 245, 245); */
   
-}
-.align-item-center{
-  display: flex !important;
-  align-items: center;
-}
-#for{
+} */
+
+/* #for{
   display: block;
-}
+} */
 .w-100{
   width: 100%!important;
-  height: 100vh;
+  height: 86vh;
 }
 .form{
   padding: 0px 30px;
 }
 .for-login{
+  text-align: center;
+}
+.back-to-login{
   text-align: center;
 }

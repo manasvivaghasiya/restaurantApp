@@ -1,55 +1,96 @@
-<div class="h-100">
+<div class="">
     <div class="auth-wrapper auht-v2">
-        <div class="row auth-inner m-0">
-            <div class="d-none d-lg-flex align-item-center p-5 col-lg-8 col-sm-2"
-                style="background-color: rgb(253, 250, 250);">
-                <!-- <div class="container"> -->
-                <div class="w-100 d-lg-flex align-item-center justify-content-center px-5">
-                    <img src="../../assets/registration.svg" class="container-fluid" alt="">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="d-none d-lg-flex align-item-center p-5 col-lg-8 col-sm-2"
+                    style="background-color: rgb(253, 250, 250);">
+                    <div class="d-flex logo">
+                        <svg style="margin: 5px 5px 0px 0px ; " viewBox="0 0 139 95" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
+                            <defs>
+                                <linearGradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%"
+                                    y2="89.4879456%">
+                                    <stop stop-color="#000000" offset="0%"></stop>
+                                    <stop stop-color="#FFFFFF" offset="100%"></stop>
+                                </linearGradient>
+                                <linearGradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%"
+                                    y2="100%">
+                                    <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
+                                    <stop stop-color="#FFFFFF" offset="100%"></stop>
+                                </linearGradient>
+                            </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Artboard" transform="translate(-400.000000, -178.000000)">
+                                    <g id="Group" transform="translate(400.000000, 178.000000)">
+                                        <path id="Path"
+                                            d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z"
+                                            class="text-primary" style="fill: currentcolor;"></path>
+                                        <path id="Path1"
+                                            d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z"
+                                            fill="url(#linearGradient-1)" opacity="0.2"></path>
+                                        <polygon id="Path-2" fill="#000000" opacity="0.049999997"
+                                            points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325">
+                                        </polygon>
+                                        <polygon id="Path-21" fill="#000000" opacity="0.099999994"
+                                            points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338">
+                                        </polygon>
+                                        <polygon id="Path-3" fill="url(#linearGradient-2)" opacity="0.099999994"
+                                            points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <h3>Vuexy</h3>
+                    </div>
+                    <!-- <div class="container"> -->
+                    <div class="w-100 d-lg-flex align-item-center justify-content-center">
+                        <img src="../../assets/registration.svg" class="container-fluid" alt="">
+                    </div>
+                    <!-- </div> -->
                 </div>
-                <!-- </div> -->
-            </div>
-            <div class="d-flex align-item-center auth-bg p-5 p-lig-5 col-lg-4 mt-5 font">
-                <div class="px-xl-2 mx-auto col-lg-12 col-sm-8 col-md-6">
-                    <form class="form" [formGroup]="user" (ngSubmit)="onSubmit()">
-                        <h4> Adventure starts here <i class="fa fa-rocket" aria-hidden="true"></i></h4>
-                        <h5>Make your app management easy and fun!</h5>
+                <div class="d-flex align-item-center auth-bg p-5 p-lig-5 col-lg-4 mt-5 font">
+                    <div class="px-xl-2 mx-auto col-lg-12 col-sm-8 col-md-6 form-registration">
+                        <form class="form" [formGroup]="user" (ngSubmit)="onSubmit()">
+                            <h4>
+                                <h4>Adventure starts here 🚀</h4>
+                            </h4>
+                            <p class="text-muted">Make your app management easy and fun!</p>
 
 
-                        <div class="form-group"
-                            [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.['touched'] }">
-                            <label>Email</label>
-                            <input type="text" required formControlName="email" placeholder="john@gmail.com"
-                                class="form-control" name="email" />
-                            <span
-                                *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']"
-                                class="text-danger">
-                                Email is required
-                            </span>
-                            <span
-                                *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['email']"
-                                class="text-danger">
-                                Please enter a valid email
-                            </span>
-                        </div>
-                        <div class="form-group"
-                            [ngClass]="{ 'form-invalid': !user.get('fullName')?.valid && user.get('fullName')?.['touched'] }">
-                            <label>fullName:</label>
-                            <input type="text" required formControlName="fullName" class="form-control"
-                                placeholder="fullName" name="fullName" />
-                            <span
-                                *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['required']"
-                                class="text-danger">
-                                fullName Name is required
-                            </span>
-                            <span
-                                *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['fullName']"
-                                class="text-danger">
-                                Please enter a valid fullName
-                            </span>
-                        </div>
+                            <div class="form-group"
+                                [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.['touched'] }">
+                                <label>Email</label>
+                                <input type="text" required formControlName="email" placeholder="john@gmail.com"
+                                    class="form-control" name="email" />
+                                <span
+                                    *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']"
+                                    class="text-danger">
+                                    Email is required
+                                </span>
+                                <span
+                                    *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['email']"
+                                    class="text-danger">
+                                    Please enter a valid email
+                                </span>
+                            </div>
+                            <div class="form-group"
+                                [ngClass]="{ 'form-invalid': !user.get('fullName')?.valid && user.get('fullName')?.['touched'] }">
+                                <label>fullName:</label>
+                                <input type="text" required formControlName="fullName" class="form-control"
+                                    placeholder="fullName" name="fullName" />
+                                <span
+                                    *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['required']"
+                                    class="text-danger">
+                                    fullName Name is required
+                                </span>
+                                <span
+                                    *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['fullName']"
+                                    class="text-danger">
+                                    Please enter a valid fullName
+                                </span>
+                            </div>
 
-                        <!-- <div class="form-group">
+                            <!-- <div class="form-group">
             <label>address:</label>
             <input type="text" required formControlName="address" class="form-control" placeholder="address" name="address" />
             <span
@@ -61,72 +102,74 @@
             Please enter a valid address
         </span>
         </div> -->
-                        <div class="form-group">
-                            <label>mobileNumber:</label>
-                            <input type="text" required formControlName="mobileNumber" placeholder="mobileNumber"
-                                class="form-control" name="mobileNumber" />
-                            <span
-                                *ngIf="!user.get('mobileNumber')?.valid && user.get('mobileNumber')?.touched && user.get('mobileNumber')?.errors?.['required']"
-                                class="text-danger">
-                                Please enter a valid number
-                            </span>
-                            <span
-                                *ngIf="!user.get('mobileNumber')?.valid && user.get('mobileNumber')?.touched && user.get('mobileNumber')?.errors?.['pattern']"
-                                class="text-danger">
-                                number is required
-                            </span>
-                        </div>
-                        <div class="form-group">
-                            <div>
-                                <label>password:</label>
+                            <div class="form-group">
+                                <label>mobileNumber:</label>
+                                <input type="text" required formControlName="mobileNumber" placeholder="mobileNumber"
+                                    class="form-control" name="mobileNumber" />
+                                <span
+                                    *ngIf="!user.get('mobileNumber')?.valid && user.get('mobileNumber')?.touched && user.get('mobileNumber')?.errors?.['required']"
+                                    class="text-danger">
+                                    Please enter a valid number
+                                </span>
+                                <span
+                                    *ngIf="!user.get('mobileNumber')?.valid && user.get('mobileNumber')?.touched && user.get('mobileNumber')?.errors?.['pattern']"
+                                    class="text-danger">
+                                    number is required
+                                </span>
                             </div>
-                            <input type="Password" required formControlName="Password" class="form-control"
-                                placeholder="........" name="Password" />
+                            <div class="form-group">
+                                <div>
+                                    <label>password:</label>
+                                </div>
+                                <input type="Password" required formControlName="Password" class="form-control"
+                                    placeholder="........" name="Password" />
 
-                            <span
-                                *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['required']"
-                                class="text-danger">
-                                password must be at least 6 character
-                            </span>
-                            <span
-                                *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['Password']"
-                                class="text-danger">
-                                password must be at least 6 character
-                            </span>
-                        </div>
-                        <input type="checkbox" id="" name="policy" value="policy">
-                        <label for="policy" class="ml-1"> I agree to<a href="" class="pl-1">privacy policy &
-                                terms</a></label><br>
-                        <!-- <h5>i agree to<a href=""> privacy policy & terms</a></h5> -->
-
-                        <button type="submit" class="btn btn-lg btn-primary" [disabled]="!user.valid">sign up</button>
-                        <br>
-                        <br>
-                        <p class="text-center mt-2">
-                            <span>Already have an account?</span>
-                            <a href="" class="pl-1">sign in instead</a>
-                        </p>
-                        <div class="divider my-2">
-                            <div class="divider-text" style="color:rgb(172, 169, 169)">
-                                <!-- ::before -->
-                                or
+                                <span
+                                    *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['required']"
+                                    class="text-danger">
+                                    password must be at least 6 character
+                                </span>
+                                <span
+                                    *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['Password']"
+                                    class="text-danger">
+                                    password must be at least 6 character
+                                </span>
                             </div>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-facebook p-2 m-2 icon" style="background-color: slateblue; color: white;"
-                                aria-hidden="true"></i>
-                            <i class="fa fa-twitter p-2 m-2 icon"
-                                style="background-color: rgb(36, 193, 255); color: white;" aria-hidden="true"></i>
-                            <i class="fa fa-envelope-o p-2 m-2 icon"
-                                style="background-color:rgb(207, 57, 57); color:white" aria-hidden="true"></i>
-                            <i class="fa fa-github p-2 m-2 icon" style="background-color: black; color: white;"
-                                aria-hidden="true"></i>
-                        </div>
+                            <input type="checkbox" id="" name="policy" value="policy">
+                            <label for="policy" class="ml-1"> I agree to<a href="" class="pl-1">privacy policy &
+                                    terms</a></label><br>
+                            <!-- <h5>i agree to<a href=""> privacy policy & terms</a></h5> -->
 
-                        <!-- (click)="open()" -->
+                            <button type="submit" class="btn btn-lg btn-primary" [disabled]="!user.valid">sign
+                                up</button>
+                            <br>
+                            <br>
+                            <p class="text-center mt-2">
+                                <span>Already have an account?</span>
+                                <a href="" class="pl-1">sign in instead</a>
+                            </p>
+                            <div class="divider my-2">
+                                <div class="divider-text" style="color:rgb(172, 169, 169)">
+                                    <!-- ::before -->
+                                    or
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-facebook p-2 m-2 icon"
+                                    style="background-color: slateblue; color: white;" aria-hidden="true"></i>
+                                <i class="fa fa-twitter p-2 m-2 icon"
+                                    style="background-color: rgb(36, 193, 255); color: white;" aria-hidden="true"></i>
+                                <i class="fa fa-envelope-o p-2 m-2 icon"
+                                    style="background-color:rgb(207, 57, 57); color:white" aria-hidden="true"></i>
+                                <i class="fa fa-github p-2 m-2 icon" style="background-color: black; color: white;"
+                                    aria-hidden="true"></i>
+                            </div>
 
-                        <!-- <button type="submit" class="btn btn-primary">submit</button> -->
-                    </form>
+                            <!-- (click)="open()" -->
+
+                            <!-- <button type="submit" class="btn btn-primary">submit</button> -->
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

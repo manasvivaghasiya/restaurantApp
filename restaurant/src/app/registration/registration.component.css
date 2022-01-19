@@ -1,20 +1,38 @@
-a{
-    font-family: 'Dongle', sans-serif;
-    color: #7367f0;
-    text-decoration: none;
-  }
-h4{
-    color:rgb(80, 79, 79) ;
-  font-family: 'Dongle', sans-serif;
-   /* font-size: 40px; */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    box-sizing: border-box;
+}
+.logo{
+    align-items: start;
+    flex-wrap: nowrap;
+}
+h3{
+    color:#5e50ee;
+    font-weight: 600;
+    /* margin: 1.5pc 0 0 20px; */
+    font-family: 'Montserrat', sans-serif;
 
 }
-h5{
-    color: rgb(139, 139, 139);
-  font-family: 'Dongle', sans-serif;
+a{
+    color: #7367f0;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+h4{
+    color: #5e5873;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 12px;
+
+}
+p{
+    font-weight: 500;
+    font-size: 15px;
   /* font-size:30px; */
-
-
+  font-family: 'Montserrat', sans-serif;
 
 }
 .btn{
@@ -25,17 +43,9 @@ h5{
 .btn:hover{
     box-shadow:0px 0px 35px 1px rgba(197, 158, 231, 0.678);
 }
-label{
-  font-family: 'Dongle', sans-serif;
-  /* font-size:30px; */
 
-}
-input{
-  font-family: 'Dongle', sans-serif;
-  /* font-size:30px; */
 
-}
-.align-item-center {
+.form-registration {
     display: flex !important;
     align-items: center;
     padding: 10px;
@@ -44,21 +54,36 @@ input{
 
 .divider{
     text-align: center;
-
 }
 .divider .divider-text{
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
 }
 .divider-text:before  {
-
-   right: 100%;
+   background-color: rgb(212, 212, 212);
+   right: 54%;
    content:"";
    position: absolute;
-   top: 50%;
+   top: 12px;
    width:100px;
+   height: 1px;
 }
-
+.divider-text:after {
+    background-color: rgb(212, 212, 212);
+    left: 54%;
+    content:"";
+    position: absolute;
+    top: 12px;
+    width:100px;
+    height: 1px;
+ }
+label{
+    font-family: 'Montserrat', sans-serif;
+}
+input{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
 
 .icon{
     border-radius: 4px 4px;
@@ -70,9 +95,9 @@ input{
 }
 
 img{
-    width:70%;
+    width:100%;
     border-style: none;
-    height:auto;
+    /* height:auto; */
 }
 .px-5{
     padding-left:4rem !important;
@@ -81,7 +106,7 @@ img{
 }
 .w-100{
     width: 100%!important;
-    height: 90vh;
+    height: 80vh;
 }
 .form{
     padding: 0px 30px;
