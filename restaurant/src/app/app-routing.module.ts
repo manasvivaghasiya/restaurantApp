@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.gaurd';
+import { CrudComponent } from './crud/crud.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { LoginComponent } from './login/login.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'forgotpass', component:ForgotPassComponent},
   {path: 'welcome', component:WelcomeComponent},
   {path: 'dashboard', component:DashboardComponent},
+  {path:'crud',component:CrudComponent},
   {path: 'app',canActivate:[AuthGuard],
    children:[
      {

@@ -1,11 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Data } from '@angular/router';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
+  deleteDataById(userId: string) {
+    throw new Error('Method not implemented.');
+  }
+
+  url='https://iris-api.mycodelibraries.com/api/User';
   // logout() {
   //   throw new Error('Method not implemented.');
   // }
@@ -40,5 +47,26 @@ registration(email:string,fullName:string, mobileNumber:any,password:number,role
 forgotPass(email:string){
   return this.httpClient.post(`${environment.apiEndPoint}/SendResetPasswordRequest?email=${email}`,null)
 }
+
+// -----crud--------- 
+// crud(email:string,fullName:string,mobileNumber:any){
+//   return this.httpClient.post(`${environment.apiEndPoint}`)
+// }
+
+ getAllUser(): Observable<Data[]>{
+   return this.httpClient.get<Data[]>
+   (this.url +'/GetAllUsers ');
+ }
+// getDataById(dataId:string): Observable<Data>{
+//   return this.httpClient.get<Data>
+//   (this.url + '')
+// }
+// createData(data: Data): Observable<Data>{
+//   const httpClientOptions = {headers: new httpClientHeader({})
+// };
+
+// return this.httpClient.post<data>(this.url + '/CreateUser',data,httpClientOptions);
+// }
+
 
 }

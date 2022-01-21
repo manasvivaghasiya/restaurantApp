@@ -1,0 +1,73 @@
+<div class="container">
+     <form [formGroup]="user" ngSubmit="onSubmit">
+                <div class="form-group"
+                                [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.['touched'] }">
+                                <label>Email</label>
+                                <input type="text" required formControlName="email" placeholder="email"
+                                    class="form-control" name="email" />
+                                <span
+                                    *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']"
+                                    class="text-danger">
+                                    Email is required
+                                </span>
+                                <span
+                                    *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['email']"
+                                    class="text-danger">
+                                    Please enter a valid email
+                                </span>
+                </div>
+                    <div class="form-group"
+                                [ngClass]="{ 'form-invalid': !user.get('fullName')?.valid && user.get('fullName')?.['touched'] }">
+                                <label>fullName:</label>
+                                <input type="text" required formControlName="fullName" class="form-control"
+                                    placeholder="fullName" name="fullName" />
+                                <span
+                                    *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['required']"
+                                    class="text-danger">
+                                    fullName Name is required
+                                </span>
+                                <span
+                                    *ngIf="!user.get('fullName')?.valid && user.get('fullName')?.touched && user.get('fullName')?.errors?.['fullName']"
+                                    class="text-danger">
+                                    Please enter a valid fullName
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>mobileNumber:</label>
+                                <input type="text" required formControlName="mobileNumber" placeholder="mobileNumber"
+                                    class="form-control" name="mobileNumber" />
+                                <span
+                                    *ngIf="!user.get('mobileNumber')?.valid && user.get('mobileNumber')?.touched && user.get('mobileNumber')?.errors?.['required']"
+                                    class="text-danger">
+                                    Please enter a valid number
+                                </span>
+                                <span
+                                    *ngIf="!user.get('mobileNumber')?.valid && user.get('mobileNumber')?.touched && user.get('mobileNumber')?.errors?.['pattern']"
+                                    class="text-danger">
+                                    number is required
+                                </span>
+                            </div>
+                            
+                             <button type="submit" class="btn btn-primary" [disabled]="!user.valid">submit</button>
+                            <!-- ---------table-------- -->
+                            <table class="table">
+                                <tr class="btn-secondary">
+                                    <th>email</th>
+                                    <th>fullName</th>
+                                    <th>mobileNumber</th>
+                                </tr>
+                                <tr *ngFor="let data in allUser">
+                                    <td>{{data.email}}</td>
+                                    <td>{{data.fullName}}</td>
+                                    <td>{{data.mobileNumber}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success" (click)="loadDataToEdit(data.userId)">Edit</button>
+                                    </td>
+                                    <td>
+                                        <button type="button"class="btn btn-danger"(click)="deleteData(data.userId)">delete</button>
+                                    </td>
+                                </tr>
+                            </table>
+        
+  </form>
+</div>

@@ -51,7 +51,7 @@ export class RegistrationComponent {
   }
 
   onSubmit() {
-    debugger
+    // debugger
     const roleId = 2
     this.accountService.registration(this.f['email'].value, this.f['fullName'].value, this.f['mobileNumber'].value, this.f['Password'].value, roleId).
       subscribe(

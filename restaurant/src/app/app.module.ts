@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 // import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthHelpers } from './auth/auth.helper';
+import { CrudComponent } from './crud/crud.component';
 // import { AuthModule } from './auth/auth.module';
 // import { AuthHelpers } from './auth/auth.helper';
 
@@ -27,7 +28,8 @@ import { AuthHelpers } from './auth/auth.helper';
     RegistrationComponent,
     ForgotPassComponent,
     WelcomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
