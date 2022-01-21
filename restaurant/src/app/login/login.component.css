@@ -34,11 +34,7 @@ h2{
 p{
     color: rgb(131, 126, 126);
     font-family: 'Montserrat', sans-serif;
-    /* font-weight: 500; */
     font-size: 15px;
-     
-  /* font-size:30px; */
-
 }
 .form-login{
     display: flex !important;
@@ -58,39 +54,32 @@ p{
 
     a{
         font-family: 'Montserrat', sans-serif;
+        color: #7367f0;
+        text-decoration: none;
+    }
 
-  color: #7367f0;
-  text-decoration: none;
-  /* font-size:30px; */
-
-}
 label{
     font-family: 'Montserrat', sans-serif;
-
-  color: rgb(131, 126, 126);
-  /* font-size:30px; */
-
-
-
+    color: rgb(131, 126, 126);
 }
+
 span{
     font-family: 'Montserrat', sans-serif;
 
 }
 input{
     font-family: 'Montserrat', sans-serif;
-
-  /* font-size:30px; */
-
-
 }
+
+
+
 .divider{
     text-align: center;
 }
 .divider .divider-text{
     position: relative;
-    /* display: inline-block; */
 }
+
 .divider-text:before  {
    background-color: rgb(212, 212, 212);
    right: 54%;
