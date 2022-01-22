@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Data } from '@angular/router';
-import { threadId } from 'worker_threads';
+import { environment } from 'src/environments/environment';
 import { AccountService } from '../services/account.service';
 
 @Component({
@@ -10,66 +9,36 @@ import { AccountService } from '../services/account.service';
   styleUrls: ['./crud.component.css']
 })
 export class CrudComponent implements OnInit {
-  user!:FormGroup;
-  allUser: any;
-  dataSaved: any;
- userIdUpdate:null | undefined;
-  updateData: any;
-  data:any;
-  dataIdUpdate: null | undefined;
+  user!: FormGroup;
+  http: any;
+  userData: any;
 
-  constructor(private formBuilder:FormBuilder,
-    private accountService:AccountService) { }
+
+  constructor(private formBuilder: FormBuilder) {
+    this.user = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      fullName: ['', [Validators.required]],
+      mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
+    })
+  }
 
   ngOnInit(): void {
-    this.user=this.formBuilder.group({
-      email:['',[Validators.required]],
-      fullname:['',[Validators.required]],
-      mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-    })
-    this.loadAllUser();
+    this.getUser()
   }
-  loadAllUser(){
-    this.allUser =this.accountService.getAllUser();
+  getUser() {
+    this.http.get(`${environment.apiEndPoint}/api/user/get`).subscribe((res:any) =>{
+      this.userData = res.data
+    } )
   }
- onSubmit(){
-   this.dataSaved = false;
-   const crud = this.user.value;
-  }
-  loadDataToEdit(userId:string){
-    this.accountService.getUserById(userId).subscribe(this.data => {
-         this.dataSaved = false,
-          thisuserIdUpdate = this.user.userId,
-          this.user.controls['email'].setValue(this.data.email),
-          this.user.controls['fullName'].setValue(this.data.fullName),
-          this.user.control['mobileNumber'].setValue(this.data.mobileNumber)
-    });
-  }
-createData(data: Data){
-  if (this.userIdUpdate == null){
-    threadId.accountService.createData(data).subscribe(
-      () =>{
-        this.dataSaved=true;
-        this.loadAllUser();
-        this.userIdUpdate=null;
-
-      }
-    );
-  }else{
-    data['userId'] = this.updateData(data).subscribe(()=>{
-      this.dataSaved = true;
-      this.loadDataToEdit();
-      this.dataIdUpdate = null;
-    });
-  }
-}
-deleteData(userId:string){
-  if(confirm("are you sure you want to delete this ?")){
-    this.accountService.deleteDataById(userId).subscribe(() =>{
-      this.dataSaved=true;
-      this.userIdUpdate=null;
-    });
-  }
+deleteUser(id:number){
+  this.http.delete(`${environment.apiEndPoint}/api/user/delete?id=${id}`).subscribe((res: any) =>{
+    if (res.isSuccess){
+      alert('data delete successfully')
+      this.getUser()
+    }else{
+      alert(res.message)
+    }
+  })
 }
 
 }
