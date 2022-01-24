@@ -32,13 +32,13 @@ export class CrudComponent implements OnInit {
   }
 
   getUser() {
-    this.HttpClient.get(`${environment.apiEndPoint}/api/User/GetAllUsers`).subscribe((res:any) => {
+    this.HttpClient.get(`${environment.apiEndPoint}/GetAllUsers`).subscribe((res:any) => {
       this.allUser = res.data
     })
   }
 
   deleteUser(id:number){
-    this.HttpClient.delete(`${environment.apiEndPoint}/api/user/DeleteUser?id=${id}`).subscribe((res: any) => {
+    this.HttpClient.delete(`${environment.apiEndPoint}/DeleteUser?id=${id}`).subscribe((res: any) => {
       if (res.isSuccess){
         alert('data delete successfully')
         this.getUser()
@@ -49,7 +49,7 @@ export class CrudComponent implements OnInit {
   }
 
   updateUser(){
-    this.HttpClient.post(`${environment.apiEndPoint}/api/User/UpdateUser`,{
+    this.HttpClient.post(`${environment.apiEndPoint}/UpdateUser`,{
       ...this.editUserInfo,
       id:this.editUserInfo.id,
       ...this.user.value
@@ -70,7 +70,7 @@ export class CrudComponent implements OnInit {
       this.updateUser()
       return
     }
-    this.HttpClient.post(`${environment.apiEndPoint}/api/User/CreateUser`, this.user.value).subscribe((res: any) => {
+    this.HttpClient.post(`${environment.apiEndPoint}/CreateUser`, this.user.value).subscribe((res: any) => {
       if (res.isSuccess) {
         alert('Data added successfully')
         this.user.reset()

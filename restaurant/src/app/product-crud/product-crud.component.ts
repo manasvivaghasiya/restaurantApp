@@ -34,13 +34,13 @@ export class ProductCrudComponent implements OnInit {
   }
 
   getProduct(){
-      this.http.get(`${environment.apiProduct}/api/product/get`).subscribe((res:any)=>{
+      this.http.get(`${environment.apiProduct}/product/get`).subscribe((res:any)=>{
         this.productData = res.data
       })
   }
 
   deleteProduct(id:number){
-    this.http.delete(`${environment.apiProduct}/api/product/delete?id=${id}`).subscribe((res:any) => {
+    this.http.delete(`${environment.apiProduct}/product/delete?id=${id}`).subscribe((res:any) => {
       if(res.isSuccess){
         alert('data deleted successfully')
         this.getProduct()
@@ -51,7 +51,7 @@ export class ProductCrudComponent implements OnInit {
   }
 
   updateProduct(){
-    this.http.post(`${environment.apiProduct}/api/product/update`,{
+    this.http.post(`${environment.apiProduct}/product/update`,{
       ...this.editProductInfo,
       id:this.editProductInfo.id,
       ...this.product.value
@@ -72,7 +72,7 @@ export class ProductCrudComponent implements OnInit {
        this.updateProduct()
        return
      }
-     this.http.post(`${environment.apiProduct}/api/product/add`,this.product.value).
+     this.http.post(`${environment.apiProduct}/product/add`,this.product.value).
      subscribe((res:any) => {
        if(res.Success){
           this.editProductInfo=null
