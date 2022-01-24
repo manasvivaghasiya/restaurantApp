@@ -55,18 +55,17 @@
                 <th>fullName</th>
                 <th>mobileNumber</th>
             </tr>
-            <tr *ngFor="let data in allUser">
-                <td>{{data.email}}</td>
-                <td>{{data.fullName}}</td>
-                <td>{{data.mobileNumber}}</td>
+            <tr *ngFor="let item in allUser">
+                <td>{{item.email}}</td>
+                <td>{{item.fullName}}</td>
+                <td>{{item.mobileNumber}}</td>
                 <td>
-                    <button type="button" class="btn btn-success" (click)="editdata(data)">Edit</button>
+                    <button type="button" class="btn btn-success" (click)="editUser(item)">Edit</button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-danger" (click)="deleteData(data._id)">delete</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteUser(item._id)">delete</button>
                 </td>
             </tr>
         </table>
-
     </form>
 </div>
