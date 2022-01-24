@@ -5,6 +5,7 @@ import { CrudComponent } from './crud/crud.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { LoginComponent } from './login/login.component';
+import { ProductCrudComponent } from './product-crud/product-crud.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'welcome', component:WelcomeComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path:'crud',component:CrudComponent},
+  {path:'product-crud',component:ProductCrudComponent},
   {path: 'app',canActivate:[AuthGuard],
    children:[
      {

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
@@ -9,14 +10,17 @@ import { AccountService } from '../services/account.service';
   styleUrls: ['./crud.component.css']
 })
 export class CrudComponent implements OnInit {
+  allUser:any = [];
   user!: FormGroup;
-  http: any;
   userData: any;
-  editUserInfo: any;
+  editUserInfo: any = null;
+  // uploadedImage: any;
+  // userImage: string | ArrayBuffer | null | undefined;
 
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,private HttpClient:HttpClient) {
     this.user = this.formBuilder.group({
+      // id:['0',[Validators.required]],
       email: ['', [Validators.required]],
       fullName: ['', [Validators.required]],
       mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
@@ -26,37 +30,72 @@ export class CrudComponent implements OnInit {
   ngOnInit(): void {
     this.getUser()
   }
+
   getUser() {
-    this.http.get(`${environment.apiEndPoint}/api/user/get`).subscribe((res:any) =>{
-      this.userData = res.data
-    } )
+    this.HttpClient.get(`${environment.apiEndPoint}/api/User/GetAllUsers`).subscribe((res:any) => {
+      this.allUser = res.data
+    })
   }
-deleteUser(id:number){
-  this.http.delete(`${environment.apiEndPoint}/api/user/delete?id=${id}`).subscribe((res: any) =>{
-    if (res.isSuccess){
-      alert('data delete successfully')
-      this.getUser()
-    }else{
-      alert(res.message)
+
+  deleteUser(id:number){
+    this.HttpClient.delete(`${environment.apiEndPoint}/api/user/DeleteUser?id=${id}`).subscribe((res: any) => {
+      if (res.isSuccess){
+        alert('data delete successfully')
+        this.getUser()
+      }else{
+        alert(res.message)
+      }
+    })
+  }
+
+  updateUser(){
+    this.HttpClient.post(`${environment.apiEndPoint}/api/User/UpdateUser`,{
+      ...this.editUserInfo,
+      id:this.editUserInfo.id,
+      ...this.user.value
+    }).subscribe((res:any) =>{
+      if(res.isSuccess){
+        this.editUserInfo = null
+        alert('data updated successfully')
+        this.user.reset()
+        this.getUser()
+      }else{
+        alert(res.message)
+      }
+    })
+  }
+
+  addUser() {
+    if (this.editUserInfo) {
+      this.updateUser()
+      return
     }
-  })
-}
-updateUser(){
-  this.http.update(`${environment.apiEndPoint}/api/user/update`,{
-    ...this.editUserInfo,
-    id:this.editUserInfo.id,
-    ...this.user.value
-  }).subscribe((res:any) =>{
-    if(res.isSuccess){
-      this.editUserInfo = null
-      alert('data updated successfully')
-      this.user.reset()
-      this.getUser()
-    }else{
-      alert(res.message)
-    }
-  })
-}
+    this.HttpClient.post(`${environment.apiEndPoint}/api/User/CreateUser`, this.user.value).subscribe((res: any) => {
+      if (res.isSuccess) {
+        alert('Data added successfully')
+        this.user.reset()
+        this.getUser()
+      } else {
+        alert(res.message)
+      }
+    })
+  }
+  
+  // -------image---------
+  // handleFileInput(files: any) {
+  //   let file = files.target.files[0];
+  //   this.uploadedImage = file
+  //   let reader = new FileReader();
+  //   reader.readAsDataURL(file);
+  //   reader.onload = () => {
+  //     this.userImage = reader.result;
+  //   };
+  //   reader.onerror = function (error) {
+  //     console.log('Error: ', error);
+  //   };
+  // }
+  // -----------
+
 
 editUser(user:any){
   this.editUserInfo = user

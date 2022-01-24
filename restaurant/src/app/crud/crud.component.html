@@ -1,8 +1,9 @@
 <div class="container">
     <form [formGroup]="user" ngSubmit="onSubmit">
+
         <div class="form-group"
             [ngClass]="{ 'form-invalid': !user.get('email')?.valid && user.get('email')?.['touched'] }">
-            <label>Email</label>
+            <label>Email:</label>
             <input type="text" required formControlName="email" placeholder="email" class="form-control" name="email" />
             <span
                 *ngIf="!user.get('email')?.valid && user.get('email')?.touched && user.get('email')?.errors?.['required']"
@@ -46,21 +47,28 @@
                 number is required
             </span>
         </div>
+        <!-- <div class="form-group">
+            <label>Image</label>
+            <input type="file" class="form-control" name="userImage" (change)="handleFileInput($event)" />
+        </div> -->
 
-        <button class="btn btn-primary" (click)="addUser">add</button>
+        <button class="btn btn-primary" (click)="addUser()">add</button>
         <!-- ---------table-------- -->
         <table class="table">
             <tr class="btn-secondary">
                 <th>email</th>
                 <th>fullName</th>
                 <th>mobileNumber</th>
+                <!-- <th>image</th> -->
             </tr>
             <tr *ngFor="let item in allUser">
                 <td>{{item.email}}</td>
                 <td>{{item.fullName}}</td>
                 <td>{{item.mobileNumber}}</td>
+                <!-- <td><img style="width: 100px;" [src]="item.image" [alt]="item.firstName"></td> -->
                 <td>
-                    <button type="button" class="btn btn-success" (click)="editUser(item)">Edit</button>
+                <td>
+                    <button type="button" class="btn btn-success" (click)="editUser(item._id)">Edit</button>
                 </td>
                 <td>
                     <button type="button" class="btn btn-danger" (click)="deleteUser(item._id)">delete</button>
