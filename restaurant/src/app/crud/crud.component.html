@@ -48,29 +48,49 @@
             </span>
         </div>
   <!-- -----password---- -->
+  <div class="form-group">
+    <div>
+        <label>password:</label>
+    </div>
+    <input type="Password" required formControlName="Password" class="form-control"
+        placeholder="........" name="Password" />
+
+    <span
+        *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['required']"
+        class="text-danger">
+        password must be at least 6 character
+    </span>
+    <span
+        *ngIf="!user.get('Password')?.valid && user.get('Password')?.touched && user.get('Password')?.errors?.['Password']"
+        class="text-danger">
+        password must be at least 6 character
+    </span>
+</div>
         <div class="form-group">
-              <label for="">password:</label>
-              <input type="password" formControlName="password" name="password">
-        </div>
-        <!-- <div class="form-group">
             <label>Image</label>
             <input type="file" class="form-control" name="userImage" (change)="handleFileInput($event)" />
-        </div> -->
+        </div>
 
-        <button class="btn btn-primary" (click)="addUser()">add</button>
+        <button class="btn btn-primary" (click)="addUser()">submit</button>
+        <br>
         <!-- ---------table-------- -->
         <table class="table">
+            <thead>
             <tr class="btn-secondary">
                 <th>email</th>
                 <th>fullName</th>
                 <th>mobileNumber</th>
+                <th>image</th>
                 <!-- <th>image</th> -->
             </tr>
-            <tr *ngFor="let item in allUser">
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of allUser">
                 <td>{{item.email}}</td>
                 <td>{{item.fullName}}</td>
                 <td>{{item.mobileNumber}}</td>
-                <!-- <td><img style="width: 100px;" [src]="item.image" [alt]="item.firstName"></td> -->
+                <!-- <td>{{item.image}}</td> -->
+                <td><img style="width: 100px;" [src]="item.image" [alt]="item.firstName"></td>
                 <td>
                 <td>
                     <button type="button" class="btn btn-success" (click)="editUser(item._id)">Edit</button>
@@ -79,6 +99,7 @@
                     <button type="button" class="btn btn-danger" (click)="deleteUser(item._id)">delete</button>
                 </td>
             </tr>
+        </tbody>
         </table>
     </form>
 </div>

@@ -12,7 +12,7 @@ export class AccountService {
     throw new Error('Method not implemented.');
   }
 
-  url='https://iris-api.mycodelibraries.com/api/User';
+  url='https://iris-api.mycodelibraries.com/api';
   // logout() {
   //   throw new Error('Method not implemented.');
   // }
@@ -27,15 +27,16 @@ export class AccountService {
   isLoggedIn(){
     return localStorage.getItem('userInfo');
   }
+  
  login(email:string, password:string){
-   return this.httpClient.post(`${environment.apiEndPoint}/LoginAuthenticate`,{
+   return this.httpClient.post(`${environment.apiEndPoint}/User/LoginAuthenticate`,{
      email:email,
      password:password
    })
  }
 
 registration(email:string,fullName:string, mobileNumber:any,password:number,roleId:any){
-    return this.httpClient.post(`${environment.apiEndPoint}/CreateUser`,{
+    return this.httpClient.post(`${environment.apiEndPoint}/User/CreateUser`,{
       email:email,
       fullName: fullName,
       mobileNumber: mobileNumber,
@@ -45,7 +46,7 @@ registration(email:string,fullName:string, mobileNumber:any,password:number,role
 }
 
 forgotPass(email:string){
-  return this.httpClient.post(`${environment.apiEndPoint}/SendResetPasswordRequest?email=${email}`,null)
+  return this.httpClient.post(`${environment.apiEndPoint}/User/SendResetPasswordRequest?email=${email}`,null)
 }
 
 // -----crud--------- 

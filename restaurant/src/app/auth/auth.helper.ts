@@ -8,7 +8,7 @@ export class AuthHelpers implements HttpInterceptor {
         if (localStorage.getItem('userInfo')) {
             request = request.clone({
                 setHeaders: {
-                    Authorization: `Basic ${JSON.parse(localStorage.getItem('userInfo') as string).token}`
+                    Authorization: `Bearer ${JSON.parse(localStorage.getItem('userInfo') as string).token}`
                 }
             });
         }

@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
      this.Router.navigate(['login']);
    }
    getQuestions() {
-    this.httpClient.get(`${environment.apiEndPoint}/questions/get`).subscribe((res: any) => {
+    this.httpClient.get(`${environment.apiEndPoint}/User/GetAllUsers`).subscribe((res: any) => {
       console.log(res.data)
     })
   }

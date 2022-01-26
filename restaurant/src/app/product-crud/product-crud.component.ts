@@ -30,9 +30,9 @@ export class ProductCrudComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProduct()
+  debugger
+     this.getProduct()
   }
-
   getProduct(){
       this.http.get(`${environment.apiProduct}/product/get`).subscribe((res:any)=>{
         this.productData = res.data
@@ -67,6 +67,7 @@ export class ProductCrudComponent implements OnInit {
      })
    }
 
+
    addProduct(){
      if(this.editProductInfo){
        this.updateProduct()
@@ -74,7 +75,7 @@ export class ProductCrudComponent implements OnInit {
      }
      this.http.post(`${environment.apiProduct}/product/add`,this.product.value).
      subscribe((res:any) => {
-       if(res.Success){
+       if(res.isSuccess){
           this.editProductInfo=null
           alert('data added successfully')
           this.product.reset()
@@ -99,3 +100,7 @@ export class ProductCrudComponent implements OnInit {
    }
   
 }
+
+
+// ------------------------------------------------------------------------------------------------------------
+
